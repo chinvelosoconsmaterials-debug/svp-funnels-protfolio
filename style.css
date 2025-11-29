@@ -403,9 +403,11 @@ body {
 }
 
 .service-icon {
-  max-width: 26px;
+  width: 55px;
   height: auto;
+  display: block;
 }
+
 
 .service-title {
   font-size: 1rem;
