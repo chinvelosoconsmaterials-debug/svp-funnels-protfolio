@@ -602,3 +602,23 @@ body {
     align-items: stretch;
   }
 }
+<script>
+document.querySelectorAll('.tilt-image').forEach(img => {
+
+  img.addEventListener('mousemove', e => {
+    const rect = img.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    
+    const rotateX = (y / rect.height) * -20;
+    const rotateY = (x / rect.width) * 20;
+
+    img.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+  });
+
+  img.addEventListener('mouseleave', () => {
+    img.style.transform = "rotateX(0deg) rotateY(0deg) scale(1)";
+  });
+
+});
+</script>
