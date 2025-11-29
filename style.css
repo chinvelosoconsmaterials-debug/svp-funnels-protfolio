@@ -532,7 +532,49 @@ body {
   transition: transform 0.15s ease-out;
   transform-style: preserve-3d;
 }
+/* SKILLS SECTION */
+.skills {
+  background: #04050a;
+  padding: 4rem 0;
+}
 
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.skills-copy {
+  color: var(--text-soft);
+  max-width: 550px;
+}
+
+.skills-text {
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+/* IMAGE */
+.skills-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tilt-card {
+  width: 100%;
+  max-width: 520px;
+}
+
+.tilt-image {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  display: block;
+}
+}
 /* =========================
    FOOTER (basic, will enhance later)
    ========================= */
@@ -619,6 +661,65 @@ document.querySelectorAll('.tilt-image').forEach(img => {
   img.addEventListener('mouseleave', () => {
     img.style.transform = "rotateX(0deg) rotateY(0deg) scale(1)";
   });
+/* SKILLS SECTION */
+.skills {
+  background: #04050a;
+  padding: 4rem 0;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.skills-copy {
+  color: var(--text-soft);
+  max-width: 550px;
+}
+
+.skills-text {
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+/* IMAGE */
+.skills-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tilt-card {
+  width: 100%;
+  max-width: 520px;
+}
+
+.tilt-image {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  display: block;
+}
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .skills-copy {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .skills-visual {
+    order: -1; /* IMAGE FIRST on mobile */
+  }
+}
 
 });
 </script>
