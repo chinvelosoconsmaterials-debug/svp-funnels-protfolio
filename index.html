@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="style.css?v=2" />
+  <link rel="stylesheet" href="style.css?v=3" />
 </head>
 <body>
   <!-- HEADER -->
@@ -55,8 +55,7 @@
           </div>
 
           <p class="hero-note">
-            Featuring HVAC, handyman, construction, carwash, café, tiling, solar, and more —
-            each funnel built as a real working demo.
+            Featuring HVAC, handyman, construction, carwash, café, tiling, solar, and more — each funnel built as a real working demo.
           </p>
         </div>
 
@@ -74,9 +73,7 @@
       <div class="container about-grid">
         <div class="about-copy">
           <p class="section-eyebrow">About Chin Veloso</p>
-          <h2 class="section-title">
-            I build funnels that feel simple for your clients—and powerful for your business.
-          </h2>
+          <h2 class="section-title">I build funnels that feel simple for your clients—and powerful for your business.</h2>
 
           <p class="about-text">
             I’m <strong>Chin Veloso</strong>, the funnel designer behind SVP Funnels. I help
@@ -260,6 +257,7 @@
         </p>
 
         <div class="portfolio-grid">
+
           <!-- 1. HVAC -->
           <article class="portfolio-card">
             <div class="portfolio-thumb">
@@ -292,7 +290,7 @@
             </div>
           </article>
 
-          <!-- 3. Apex Builders (GenCon) -->
+          <!-- 3. Apex Builders -->
           <article class="portfolio-card">
             <div class="portfolio-thumb">
               <img src="assets/thumbs/thumb-apexbuilders.png" alt="General construction funnel">
@@ -324,7 +322,7 @@
             </div>
           </article>
 
-          <!-- 5. SolidStep (Tiling) -->
+          <!-- 5. SolidStep -->
           <article class="portfolio-card">
             <div class="portfolio-thumb">
               <img src="assets/thumbs/thumb-solidstep.png" alt="Tiling and flooring funnel">
@@ -372,7 +370,7 @@
             </div>
           </article>
 
-          <!-- 8. Grain & Glory – Woodworks -->
+          <!-- 8. Grain & Glory -->
           <article class="portfolio-card">
             <div class="portfolio-thumb">
               <img src="assets/thumbs/thumb-grainandglory.png" alt="Woodworks funnel">
@@ -388,7 +386,7 @@
             </div>
           </article>
 
-          <!-- 9. Silverline – Glass & Aluminum -->
+          <!-- 9. Silverline -->
           <article class="portfolio-card">
             <div class="portfolio-thumb">
               <img src="assets/thumbs/thumb-silverline.png" alt="Glass and aluminum funnel">
@@ -404,7 +402,7 @@
             </div>
           </article>
 
-          <!-- 10. Forgeline – Metal Fabrication -->
+          <!-- 10. Forgeline -->
           <article class="portfolio-card">
             <div class="portfolio-thumb">
               <img src="assets/thumbs/thumb-forgeline.png" alt="Metal fabrication funnel">
@@ -420,7 +418,7 @@
             </div>
           </article>
 
-          <!-- 11. Andrewbrew Garage Café -->
+          <!-- 11. Andrewbrew -->
           <article class="portfolio-card">
             <div class="portfolio-thumb">
               <img src="assets/thumbs/thumb-andrewbrew.png" alt="Garage café funnel">
@@ -436,7 +434,7 @@
             </div>
           </article>
 
-          <!-- 12. Wash & Brew Car Spa -->
+          <!-- 12. Wash & Brew -->
           <article class="portfolio-card">
             <div class="portfolio-thumb">
               <img src="assets/thumbs/thumb-washandbrew.png" alt="Car wash and café funnel">
@@ -457,24 +455,10 @@
     </section>
   </main>
 
-  <!-- PORTFOLIO PREVIEW MODAL -->
-  <div class="portfolio-modal" id="portfolioModal">
-    <div class="portfolio-modal-backdrop"></div>
-    <div class="portfolio-modal-dialog">
-      <button class="portfolio-modal-close" type="button">&times;</button>
-
-      <img src="" alt="" class="portfolio-modal-image" id="portfolioModalImage">
-      <h3 class="portfolio-modal-title" id="portfolioModalTitle"></h3>
-      <p class="portfolio-modal-niche" id="portfolioModalNiche"></p>
-      <p class="portfolio-modal-text" id="portfolioModalText"></p>
-    </div>
-  </div>
-
-  <!-- SCRIPTS -->
+  <!-- Tilt effect script -->
   <script>
-    // Skills tilt effect
-    document.querySelectorAll('.tilt-image').forEach(function(img) {
-      img.addEventListener('mousemove', function(e) {
+    document.querySelectorAll('.tilt-image').forEach(function (img) {
+      img.addEventListener('mousemove', function (e) {
         const rect = img.getBoundingClientRect();
         const x = e.clientX - rect.left - rect.width / 2;
         const y = e.clientY - rect.top - rect.height / 2;
@@ -486,49 +470,12 @@
           'perspective(900px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) scale(1.04)';
       });
 
-      img.addEventListener('mouseleave', function() {
+      img.addEventListener('mouseleave', function () {
         img.style.transform =
           'perspective(900px) rotateX(0deg) rotateY(0deg) scale(1)';
       });
     });
-
-    // Portfolio modal
-    (function () {
-      const modal = document.getElementById('portfolioModal');
-      const modalImg   = document.getElementById('portfolioModalImage');
-      const modalTitle = document.getElementById('portfolioModalTitle');
-      const modalNiche = document.getElementById('portfolioModalNiche');
-      const modalText  = document.getElementById('portfolioModalText');
-      const closeBtn   = modal.querySelector('.portfolio-modal-close');
-      const backdrop   = modal.querySelector('.portfolio-modal-backdrop');
-
-      document.querySelectorAll('.portfolio-thumb').forEach(thumb => {
-        thumb.style.cursor = 'pointer';
-
-        thumb.addEventListener('click', () => {
-          const card  = thumb.closest('.portfolio-card');
-          const img   = thumb.querySelector('img');
-
-          modalImg.src = img.src;
-          modalImg.alt = img.alt;
-          modalTitle.textContent = card.querySelector('.portfolio-title').textContent;
-          modalNiche.textContent = card.querySelector('.portfolio-niche').textContent;
-          modalText.textContent  = card.querySelector('.portfolio-text').textContent;
-
-          modal.classList.add('is-open');
-        });
-      });
-
-      function closeModal() {
-        modal.classList.remove('is-open');
-      }
-
-      closeBtn.addEventListener('click', closeModal);
-      backdrop.addEventListener('click', closeModal);
-      document.addEventListener('keydown', e => {
-        if (e.key === 'Escape') closeModal();
-      });
-    })();
   </script>
 </body>
 </html>
+
