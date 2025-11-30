@@ -720,6 +720,84 @@ document.querySelectorAll('.tilt-image').forEach(img => {
     order: -1; /* IMAGE FIRST on mobile */
   }
 }
+/* =========================
+   PORTFOLIO / FUNNEL DEMOS
+   ========================= */
+
+.portfolio {
+  border-top: 1px solid rgba(15, 23, 42, 0.9);
+}
+
+.portfolio-intro {
+  color: var(--text-soft);
+  max-width: 40rem;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.9rem;
+}
+
+.portfolio-card {
+  background: radial-gradient(circle at top left,
+    rgba(56, 189, 248, 0.08),
+    rgba(15, 23, 42, 0.98));
+  border-radius: 1.4rem;
+  padding: 1.3rem 1.3rem 1.4rem;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  box-shadow: 0 16px 38px rgba(15, 23, 42, 0.95);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.portfolio-thumb {
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-bottom: 0.6rem;
+  border: 1px solid rgba(15, 23, 42, 0.8);
+}
+
+.portfolio-thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.portfolio-title {
+  font-size: 0.98rem;
+  margin: 0.1rem 0;
+}
+
+.portfolio-niche {
+  font-size: 0.78rem;
+  color: var(--accent-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.portfolio-text {
+  font-size: 0.82rem;
+  color: var(--text-soft);
+  margin: 0.3rem 0 0.8rem;
+}
+
+.portfolio-actions {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Smaller buttons for cards */
+.btn.small {
+  font-size: 0.8rem;
+  padding: 0.55rem 1rem;
+}
 
 });
 </script>
